@@ -19,7 +19,8 @@ make_stroop(
   rt_lower_bound = 400,
   random_intercepts_sd = 100,
   random_slopes_sd = 50,
-  err_sd = 200
+  err_sd = 200,
+  seed = NULL
 )
 }
 \arguments{
@@ -52,6 +53,8 @@ make_stroop(
 \item{random_slopes_sd}{Standard deviation in the congruency effect across subjects.}
 
 \item{err_sd}{Residual standard deviation}
+
+\item{seed}{Seed for the random number generator. If \code{NULL}, then current state of the RNG is used.}
 }
 \value{
 A list object.
