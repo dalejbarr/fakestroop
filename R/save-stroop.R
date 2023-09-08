@@ -114,7 +114,7 @@ zip_stroop <- function(stroop, zip_filename, difficulty, overwrite = FALSE,
   if (file.exists(zip_filename) && !overwrite) {
     stop("zip file '", zip_filename, "' exists and overwrite = FALSE")
   }
-  file.remove(zip_filename)
+  if (file.exists(zip_filename)) file.remove(zip_filename)
   
   tf <- tempfile()
   save_stroop(stroop, tf, difficulty, overwrite = TRUE, quiet = TRUE)
